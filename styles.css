@@ -1,0 +1,347 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;700&display=swap');
+
+
+:root {
+    --lightgrey: hsl(0, 0%, 98%);
+    --lightgreyblue: hsl(236, 33%, 92%);
+    --lightgreblue1: hsl(233, 11%, 84%);
+    --darkgreyblue: hsl(236, 9%, 61%);
+    --dark1greyblue: hsl(235, 19%, 35%);
+
+    --darkblue: hsl(235, 21%, 11%);
+    --dark1blue: hsl(235, 24%, 19%);
+    --lightgreyblue: hsl(234, 39%, 85%);
+    --lightgreybluehover: hsl(236, 33%, 92%);
+    --darkgreyblue: hsl(234, 11%, 52%);
+    --dark1greyblue: hsl(233, 14%, 35%);
+    --dark2greyblue: hsl(237, 14%, 26%);
+    --boxshadow: hsl(235, 21%, 11%);
+
+
+}
+
+body {
+    --bg: hsl(235, 21%, 11%);
+    --fcolor: hsl(236, 33%, 92%);
+    --fcolorgrey: hsl(237, 14%, 26%);
+    --fcolorgreyhover: hsl(236, 33%, 92%);
+    --headerDD: url(./assets/desktopdark.jpg);
+    --headerML: url(./assets/mobiledarkmode.jpg);
+    --btnimg: url(./assets/sun.svg);
+    --backs: hsl(235, 24%, 19%);
+    --boxShadow: hsl(235, 21%, 11%);
+    --adding: hsl(234, 11%, 52%);
+    --adding1: hsl(237, 14%, 26%);
+
+    background: var(--bg);
+    color: var(--fcolor);
+}
+
+.light {
+    --bg: hsl(0, 0%, 98%);
+    --fcolor: hsl(235, 19%, 35%);
+    --fcolorgrey: hsl(233, 11%, 84%);
+    --fcolorgreyhover: hsl(236, 9%, 61%);
+    --headerDD: url(./assets/deslight.jpg);
+    --headerML: url(./assets/mobilelight.jpg);
+    --btnimg: url(./assets/moon.svg);
+    --backs: hsl(0, 0%, 98%);
+    --boxshadow: hsl(234, 39%, 85%);
+    --adding: hsl(234, 39%, 85%);
+    --adding1: hsl(236, 9%, 61%);
+
+
+
+    background: var(--bg);
+    color: var(--fcolor);
+}
+
+* {
+    font-family: 'Josefin Sans', sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 16px;
+    user-select: none;
+    
+
+}
+
+#container {
+    height: 100%;
+    width: 100%;
+    padding: 100px auto;
+    position: relative;
+    /* border: 1px solid black; */
+}
+
+.header {
+    width: 100%;
+    height: 300px;
+    background-image: var(--headerDD);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    /* border: 1px solid black; */
+}
+
+.todoContainer {
+    position: absolute;
+    width: 608px;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.todoheader {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: auto;
+    padding: 30px 0;
+}
+
+h1 {
+    letter-spacing: 15px;
+    font-size: 40px;
+    color: white;
+}
+
+.todoheader .toggleBackground {
+    height: 30px;
+    width: 30px;
+    background: var(--btnimg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+
+.input {
+    display: flex;
+    width: 100%;
+    padding: 10px 10px;
+    align-items: center;
+    background-color: var(--backs);
+    border-radius: 3px;
+    margin-bottom: 30px;
+}
+
+
+.checkboxContainer {
+    height: 20px;
+    width: 20px;
+    border-radius: 100%;
+    position: relative;
+    margin-right: 20px;
+}
+
+.checkboxLabel {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    border: 1px solid var(--fcolorgrey);
+    cursor: pointer;
+    transition: .5s ease;
+
+}
+
+.checkboxLabel:hover {
+    transition: .5s ease;
+    border: 1px solid var(--fcolor);
+}
+
+.checkboxLabel.checkActive {
+    border: none;
+    background-image: url(./assets/iconokkkk.svg);
+    background-size: cover;
+    background-position: center center;
+}
+
+.input input[type=text] {
+    width: 100%;
+    font-size: 18px;
+    height: 100%;
+    border: none;
+    outline: none;
+    padding: 10px 0px;
+    background-color: var(--backs);
+    color: var(--fcolor);
+}
+
+.listContainer {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    border-radius: 3px;
+    box-shadow: 0px 20px 10px -5px var(--boxshadow);
+    z-index: -1;
+}
+
+.list-infos {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    list-style-type: none;
+    border: none;
+    background: var(--backs);
+    align-items: center;
+    padding: 25px 10px;
+    border-bottom: 1px solid var(--fcolorgrey);
+}
+
+.liHint {
+    background: var(--adding);
+}
+
+.liHighlight {
+    background: var(--adding1);
+}
+
+
+.item-info {
+    width: 100%;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.close-container {
+    width: 15px;
+    height: 15px;
+}
+
+.close-container svg {
+    display: none;
+}
+
+.close-container:hover svg path {
+    fill: var(--fcolor);
+}
+
+.list-infos:hover .close-container svg {
+    display: flex;
+}
+
+.below {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    justify-content: space-between;
+    height: 50px;
+}
+
+.below-items {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--backs);
+    padding: 0 10px;
+}
+
+.below-items p {
+    font-size: 15px;
+    color: var(--fcolorgrey);
+}
+
+.below-items:nth-child(2):hover {
+    transition: .5s ease;
+    color: var(--fcolor);
+}
+
+.activeCl {
+    color: hsl(220, 98%, 61%);
+}
+
+.activeClass {
+    position: absolute;
+    width: 180px;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%);
+    background: var(--backs);
+}
+
+.active-class-items {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+}
+
+.active-class-items a {
+    text-decoration: none;
+    color: var(--fcolorgrey);
+    cursor: pointer;
+}
+
+.active-class-items a:hover {
+    transition: .5s ease;
+    color: var(--fcolor);
+}
+
+.tengo {
+    transition: .5s ease;
+    color: hsl(220, 98%, 61%);
+}
+
+#clear {
+    cursor: pointer;
+    transition: .5s ease;
+}
+
+#clear:hover {
+    transition: .5s ease;
+    color: var(--fcolor);
+}
+
+
+
+
+
+.alert {
+    width: 100%;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    border-radius: 4px;
+    letter-spacing: var(--spacing);
+    text-transform: capitalize;
+    background: #d4edda;
+    position: absolute;
+    top: -1000%;
+    transition: .5s ease-in-out;
+
+}
+
+.alertt {
+    width: 100%;
+    height: 50px;
+}
+
+.alert-danger {
+    color: #721c24;
+    background: #f8d7da;
+    transition: .3s ease-in-out;
+    top: 0;
+    opacity: 1;
+}
+
+.alert-success {
+    color: #155724;
+    background: #d4edda;
+    transition: 0.2s ease-in-out;
+    top: 0;
+    opacity: 1;
+}
+
+.draggable {
+    background: var(--fcolorgrey);
+    border-top: 1px solid var(--fcolor);
+    border-bottom: 1px solid var(--fcolor);
+}
